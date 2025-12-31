@@ -1,5 +1,7 @@
 venv/
 .idea/
 
+media/
+
 **/_pycache_/
 *.pyc
