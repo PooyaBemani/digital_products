@@ -23,7 +23,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     title = models.CharField(_('title'), max_length=50)
-    description = models.TextField(_('description'), blank=True)
+    description = models.TextField(_('description'),blank=True)
     avatar = models.ImageField(_('avatar'), blank=True, upload_to='categories')
     is_enable = models.BooleanField(_('is enable'), default=True)
     categories = models.ManyToManyField('Category', verbose_name=_('categories') , blank=True)
