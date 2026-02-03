@@ -16,8 +16,7 @@ class FileSerializer(serializers.ModelSerializer):
 
 
 class ProductSerializer(serializers.ModelSerializer):
-    categories = CategorySerializer(many=True)
-
+    #categories = CategorySerializer(many=True)
 
     class Meta:
         model = Product
