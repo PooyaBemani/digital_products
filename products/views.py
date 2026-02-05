@@ -8,6 +8,6 @@ from .serializers import CategorySerializer,ProductSerializer, FileSerializer
 class ProductListView(APIView):
 
     def get(self, request):
-        categories = Category.objects.all()
-        serializer = CategorySerializer(categories, many=True)
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True , context={'request': request})
         return Response(serializer.data)
