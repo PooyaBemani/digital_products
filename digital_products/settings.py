@@ -34,10 +34,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'products',
     'rest_framework',
-    'users'
 
+
+    'products',
+    'users'
 ]
 
 MIDDLEWARE = [
@@ -123,4 +124,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #authorization
 AUTH_USER_MODEL = 'users.User'
 
+#cache
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-snowflake",
+    }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+}
 

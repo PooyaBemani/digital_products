@@ -35,9 +35,8 @@ class UserManager(BaseUserManager):
         user.save(using=self._db)
         return user
 
-    def create_user(self, username, phone_number, email,
-                    password,is_staff,is_superuser ,**extra_fields):
-
+    def create_user(self, username=None, phone_number=None, email=None,
+                    password=None,**extra_fields):
         if username is None:
             if email :
                 username = email.split('@', 1)[0]
